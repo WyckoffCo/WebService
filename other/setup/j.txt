@@ -1,0 +1,140 @@
+
+[32;1m  Id     Duration CommandLine[0m
+[32;1m  --     -------- -----------[0m
+   1        0.031 cd setup
+   2        0.020 ls
+   3        0.008 $dir1 = $pwd
+   4        0.006 $dir2 = "C:\temp\2022-01-02"
+   5        0.002 $repoName = "newRepo1"
+   6        0.005 $repoUrl = "https://github.com/WyckoffCo/${repoName}"
+   7        0.006 echo $repoUrl
+   8        0.007 cd $dir2
+   9        0.007 cd $dir1
+  10        0.002 cd $dir2
+  11        1.141 git clone $repoUrl
+  12        0.007 cd $repoName
+  13        0.037 git checkout main
+  14        0.043 git branch foo
+  15        0.037 git checkout foo
+  16        0.002 cd $dir1
+  17        0.000 $dir1 = $pwd
+  18        0.001 $dir2 = "C:\temp\2022-01-02"
+  19        0.001 $repoName = "newRepo1"
+  20        0.001 $repoUrl = "https://github.com/WyckoffCo/${repoName}"
+  21        0.004 $branchName = "foo2"
+  22        0.002 cd $dir2
+  23        1.083 git clone $repoUrl
+  24        0.002 cd $repoName
+  25        0.043 git checkout main
+  26        0.042 git branch $branchName
+  27        0.053 git checkout $branchName
+  28        0.007 echo "# newRepo1asdf" >> README.md
+  29        0.085 git add README.md
+  30        0.050 git commit -m "commit asdf"
+  31        0.085 git push --set-upstream origin foo
+  32        1.298 git push --set-upstream origin $branchName
+  33        0.007 cd ..
+  34        0.020 rd $repoName -Recurse -Force  
+  35        0.003 cd $dir1
+  36        0.012 $branchName = Get-Random
+  37        0.005 echo $branchName
+  38        0.011 cls
+  39        2.453 .\branch.ps1
+  40        2.616 .\branch.ps1
+  41        2.524 .\branch.ps1
+  42        2.552 .\branch.ps1
+  43        2.470 .\branch.ps1
+  44        2.828 .\branch.ps1
+  45        2.523 .\branch.ps1
+  46        2.733 .\branch.ps1
+  47        2.778 .\branch.ps1
+  48        2.413 .\branch.ps1
+  49        2.464 .\branch.ps1
+  50        0.113 post -h Content-Type=application/json
+  51       14.594 httprepl http://localhost:7071/api/Function1
+  52        0.002 cls
+  53     1:45.403 httprepl http://localhost:7071/api/Function1
+  54     1:56.542 httprepl http://localhost:7071
+  55        0.088 .\test.ps1
+  56       17.309 httprepl 
+  57       31.562 .\test.ps1
+  58        0.002 cls
+  59        0.050 connect --base $rootUrl --verbose
+  60       16.251 httprepl connect --base $rootUrl --verbose
+  61        0.001 cls
+  62        0.005 $rootUrl = "http://localhost:7071"
+  63    15:16.946 httprepl connect --base $rootUrl --verbose
+  64     7:26.661 httprepl connect --base $rootUrl --verbose
+  65       24.109 .\test.ps1
+  66        5.994 httprepl $url
+  67        0.005 echo $url
+  68        0.007 $url = "http://localhost:7071/api/Function1"
+  69        0.001 echo $url
+  70     8:37.410 httprepl $url
+  71        0.014 echo %USERNAME%
+  72        0.004 cls
+  73       42.016 .\test.ps1
+  74        0.107 notepad++
+  75     3:23.370 .\test.ps1
+  76    14:58.128 .\test.ps1
+  77        0.002 cls
+  78        0.186 $repoName = "newRepo" & Get-Random
+  79        0.016 echo $repoName
+  80        0.006 $temp = Get-Random
+  81        0.007 $repoName = "newRepo${temp}"
+  82        0.001 echo $repoName
+  83        1.204 gh repo create WyckoffCo/$repoName  --private --disable-wiki --disable-issues -d "another repo"
+  84        0.067 post -h Content-Type=application/json -f "test-body-newrepo.json"
+  85     4:06.949 httprepl $url
+  86        0.001 cls
+  87       20.363 .\newrepo.ps1
+  88       27.935 .\newrepo.ps1
+  89        2.544 .\branch.ps1
+  90        0.022 curl
+  91        0.004 cls
+  92        0.025 curl \
+  93        0.051   -H "Accept: application/vnd.github.v3+json" \
+  94        0.001 cls
+  95        0.231 curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/orgs/ORG/hooks
+  96        0.008 $github_key = "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"
+  97        0.001 cls
+  98        0.233 curl -H "Authorization: token ${github_key} Accept: application/vnd.github.v3+json" https://api.github.com/orgs/ORG/hooks
+  99        0.217 curl -H "Authorization: token ${github_key}" https://api.github.com/orgs/ORG/hooks
+ 100        0.272 curl -H "Authorization: token ${github_key}" https://api.github.com/orgs/WyckoffCo/hooks
+ 101        0.006 $github_key = "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"
+ 102        0.011 $listenerUrl = "https://wyckoff-jason-github.azurewebsites.net/api/HttpTrigger-Anon?"
+ 103        0.010 $orgName = "WyckoffCo"
+ 104        0.006 $webhookName = "newWebHook"
+ 105        0.277 curl -X POST -H "Authorization: token ${github_key}" https://api.github.com/orgs/${orgName}/hooks -d '{"name":"${webhookName}","config":{"url":"${listenerUrl}","content_type":"json"}}'
+ 106        0.053 cvks
+ 107        0.002 cls
+ 108        0.007 $url = "https://api.github.com/orgs/${orgName}/hooks"
+ 109        0.037 $stuff = Invoke-RestMethod -Uri $url -Method Get -Token $github_key
+ 110        0.028 $stuff = Invoke-RestMethod -Uri $url -Method Get -Authentication $github_key
+ 111        0.228 $stuff = Invoke-RestMethod -Uri $url -Method Get -Headers @{'Authorization' = 'token ${github_key}'} 
+ 112        0.024 $stuff = Invoke-RestMethod -Uri $url -Method Get -Headers @{'Authorization' = '${github_key}'} 
+ 113        0.074 ec$url = "https://api.github.com/orgs/${orgName}/hooks"
+ 114        0.182 $stuff = Invoke-RestMethod -Uri $url -Method Get -Headers @{'Authorization' = 'token ${github_key}'} 
+ 115        0.001 $url = "https://api.github.com/orgs/${orgName}/hooks"
+ 116        0.216 $stuff = Invoke-RestMethod -Uri $url -Method Get -Headers @{'Authorization' = 'token ${github_key}'} 
+ 117        0.002 cls
+ 118        0.024 $stuff = Invoke-RestMethod -Uri $url -Method Get -Authentication "token ${github_key}"
+ 119        0.024 $stuff = Invoke-RestMethod -Uri $url -Method Get -Authentication "Bearer ${github_key}"
+ 120        0.028 $stuff = Invoke-RestMethod -Uri $url -Method Get -Authentication "Bearer ${github_key}" -Token "${github_key}"
+ 121        0.019 $stuff = Invoke-RestMethod -Uri $url -Method Get -Authentication "Bearer" -Token "${github_key}"
+ 122        0.025 $github_key_secured = ConvertTo-SecureString -String $github_key
+ 123        0.021 $github_key_secured = ConvertTo-SecureString -String "${github_key}"
+ 124        4.787 ConvertTo-SecureString
+ 125        0.008 $github_key_secured = ConvertTo-SecureString -String "${github_key}" -AsPlainText
+ 126        0.028 $stuff = Invoke-RestMethod -Uri $url -Method Get -Authentication "Bearer" -Token "${github_key_secured}"
+ 127        0.002 cls
+ 128        0.007 $github_key_secured = ConvertTo-SecureString -String "${github_key}" -AsPlainText -Force
+ 129        0.017 $stuff = Invoke-RestMethod -Uri $url -Method Get -Authentication "Bearer" -Token "${github_key_secured}"
+ 130        0.001 $github_key_secured = ConvertTo-SecureString -String "${github_key}" -AsPlainText -Force
+ 131        0.006 echo $github_key_secured
+ 132        0.002 cls
+ 133        0.021 $stuff = Invoke-RestMethod -Uri $url -Method Get  -Token "${github_key_secured}"
+ 134        0.234 $stuff = Invoke-RestMethod -Uri $url -Method Get -Headers @{'Authorization' = 'token ${github_key}'} 
+ 135        0.259 $stuff = Invoke-RestMethod -Uri $url -Method Get -Headers @{'Authorization' = 'token ${github_key}'} -Verbose
+ 136        0.050 Get-History
+
