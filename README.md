@@ -21,4 +21,4 @@ The following are a list of known issues or desired features, and should priorit
 2. Using a PAT for authentication / authorization.  Improve authentication / authorization.
 3. Hardcoded org name of 'WyckoffCo'
 4. Webhook was manually created.  Build script to create webhook for org.
-
+5. Current deployment to Azure is via VisualStudio publish.  Add GitHub Actions for CI/CD deployment
