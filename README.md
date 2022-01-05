@@ -13,3 +13,9 @@ All source code required to build the application.
 
 ### utils
 Helpful scripts
+
+## Known issues
+The following are a list of known issues, and should prioritized for future work:
+
+1. Assumption is new repo includes a "main" branch.  Need to check if branch exists; if not, create one.
+
