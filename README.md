@@ -14,8 +14,11 @@ All source code required to build the application.
 ### utils
 Helpful scripts
 
-## Known issues
-The following are a list of known issues, and should prioritized for future work:
+## Known issues / feature backlog
+The following are a list of known issues or desired features, and should prioritized for future work:
 
 1. Assumption is new repo includes a "main" branch.  Need to check if branch exists; if not, create one.
+2. Using a PAT for authentication / authorization.  Improve authentication / authorization.
+3. Hardcoded org name of 'WyckoffCo'
+4. Webhook was manually created.  Build script to create webhook for org.
 
