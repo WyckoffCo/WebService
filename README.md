@@ -10,3 +10,6 @@ All updates should be made in the following directories.
 
 ### src
 All source code required to build the application.
+
+### utils
+Helpful scripts
