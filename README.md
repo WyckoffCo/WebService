@@ -14,6 +14,21 @@ All source code required to build the application.
 ### utils
 Helpful scripts
 
+
+## Technology Stack
+
+1. Service written in C# with Visual Studio
+2. .NET Core
+3. Service leverages Azure Functions
+4. Tests written in MSTest
+
+
+## How to install / run
+
+1. Open `./src/GithubWebService.sln` in Visual Studio.
+2. Create Azure Function in Azure.
+3. In Visual Studio, publish to your Azure Function.
+
 ## Known issues / feature backlog
 The following are a list of known issues or desired features, and should prioritized for future work:
 
