@@ -23,11 +23,22 @@ Helpful scripts
 4. Tests written in MSTest
 
 
-## How to install / run
+## How to run locally
 
-1. Open `./src/GithubWebService.sln` in Visual Studio.
-2. Create Azure Function in Azure.
+1. Obtain a PAT in GitHub.
+2. Open `./src/GithubWebService.sln` in Visual Studio.
+3. Rename file `local.settings-rename.json` to `local.settings.json` 
+4. In settings file, update the following with your PAT:
+   `"GitHub_Token": "INSERT-TOKEN-HERE"`
+
+
+
+## How to deploy to Azure
+
+1. Create Azure Function in Azure.
+2. Open `./src/GithubWebService.sln` in Visual Studio.
 3. In Visual Studio, publish to your Azure Function.
+4. In the 
 
 ## Known issues / feature backlog
 The following are a list of known issues or desired features, and should prioritized for future work:

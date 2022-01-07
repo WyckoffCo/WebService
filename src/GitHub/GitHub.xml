@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GitHub</name>
+    </assembly>
+    <members>
+        <member name="M:GitHub.GitHubHelper.CreateIssue(System.String,System.String,System.String)">
+            <summary>
+            Creates an issue and adds comments
+            </summary>
+            <param name="repoName">Name of the repo.</param>
+            <param name="issueTitle">The title/message of the new issue.</param>
+            <param name="comment">the contents of the added comment.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GitHub.GitHubHelper.CreateIssue(System.String)">
+            <summary>
+            Creates an issue and adds comments with default values.
+            </summary>
+            <param name="repoName">name of the repo.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

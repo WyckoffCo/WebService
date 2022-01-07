@@ -7,10 +7,13 @@ namespace GitHub
 {
     public class GitHubHelper
     {
-        private string _orgName;
-        private GitHubClient _gitHubClient;
+        protected string _orgName;
+        protected GitHubClient _gitHubClient;
 
-        private const string GITHUB_TOKEN = "GitHub_Token";
+        protected const string GITHUB_TOKEN = "GitHub_Token";
+        protected const string ISSUE_DEFAULT_TITLE = "Branch 'main' protection added.";
+        protected const string ISSUE_DEFAULT_COMMENT = "The 'main' branch was protected requiring PRs and code review.  FYI: @jwyckoff";
+
 
         public GitHubHelper(string orgName, string gitHubToken)
         {
@@ -24,6 +27,13 @@ namespace GitHub
             _gitHubClient = new GitHubClient(new ProductHeaderValue(projectName), creds);
         }
 
+        /// <summary>
+        /// Creates an issue and adds comments
+        /// </summary>
+        /// <param name="repoName">Name of the repo.</param>
+        /// <param name="issueTitle">The title/message of the new issue.</param>
+        /// <param name="comment">the contents of the added comment.</param>
+        /// <returns></returns>
         public async Task<Issue> CreateIssue(string repoName, string issueTitle, string comment)
         {
             var issue = _gitHubClient.Issue.Create(_orgName, repoName, new NewIssue(issueTitle)).Result;
@@ -35,6 +45,15 @@ namespace GitHub
             return issue;
         }
 
+        /// <summary>
+        /// Creates an issue and adds comments with default values.
+        /// </summary>
+        /// <param name="repoName">name of the repo.</param>
+        /// <returns></returns>
+        public async Task<Issue> CreateIssue(string repoName)
+        {
+            return CreateIssue(repoName, ISSUE_DEFAULT_TITLE, ISSUE_DEFAULT_COMMENT).Result;
+        }
 
 
         public async Task<BranchProtectionSettings> ProtectBranch(string repoName, string branchName)
@@ -44,6 +63,14 @@ namespace GitHub
             var branchProtection = _gitHubClient.Repository.Branch.UpdateBranchProtection(_orgName, repoName, branchName, branchProtectionUpdate).Result;
 
             return branchProtection;
+        }
+
+        public async Task<bool> RemoveProtectBranch(string repoName, string branchName)
+        {
+
+            var branchProtectionDeleted = _gitHubClient.Repository.Branch.DeleteBranchProtection(_orgName, repoName, branchName).Result;
+
+            return branchProtectionDeleted;
         }
 
         public async Task<Repository> GetRepo(string repoName)
@@ -63,20 +90,6 @@ namespace GitHub
             
         }
 
-        public async Task<Repository> CreateRepo(string repoName)
-        {
-            var repo = _gitHubClient.Repository.Create(_orgName, new NewRepository(repoName)).Result;
-
-            return repo;
-        }
-
-        //public async Task<object> DeleteRepo(string repoName)
-        //{
-
-        //    var result = _gitHubClient.Repository.Delete(_orgName, repoName).Result;
-        //    return true;
-
-        //}
     }
 
 
