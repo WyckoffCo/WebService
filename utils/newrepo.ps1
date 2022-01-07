@@ -1,7 +1,7 @@
 cls
 
 # $temp = Get-Random
-$temp = "-2022-01-07"
+$temp = "-2022-01-07-v2"
 $orgName = "WyckoffCo"
 $repoName = "newRepo${temp}"
 

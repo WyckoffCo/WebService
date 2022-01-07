@@ -9,9 +9,13 @@
   <ItemGroup>
     <None Remove="appSettings.json" />
     <None Remove="settings.json" />
+    <None Remove="settings.rename.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="settings.rename.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

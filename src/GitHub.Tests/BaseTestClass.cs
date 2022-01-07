@@ -19,11 +19,7 @@ namespace Github.Tests
         public BaseTestClass()
         {
             this._orgName = "WyckoffCo";
-            this._repoName = "newRepo1328347181";
-
-
-
-
+            this._repoName = "newRepo-2022-01-07-v2";
         }
 
         protected void Init()
